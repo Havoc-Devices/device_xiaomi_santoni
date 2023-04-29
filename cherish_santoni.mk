@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 $(call inherit-product, device/xiaomi/santoni/device.mk)
 
 # Inherit some common sweet stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Prebuilt apps
 $(call inherit-product-if-exists, vendor/prebuilt-apps/config.mk)
@@ -34,17 +34,20 @@ $(call inherit-product-if-exists, vendor/gapps/core/config.mk)
 PRODUCT_DEVICE := santoni
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 4X
-PRODUCT_NAME := cherish_santoni
+PRODUCT_NAME := havoc_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
-# Inherit some props from Cherish
-CHERISH_BUILD_TYPE := OFFICIAL
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=Gabriel Nogueira (xddeath69)
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-TARGET_SUPPORTS_QUICK_TAP := true
-
+# Inherit some props from havoc
+HAVOC_BUILD_TYPE=Official
+PRODUCT_GENERIC_PROPERTIES += \ 
+# Havoc-OS
+ro.havoc.device.name=Redmi 4/4x
+ro.havoc.group.url=https://t.me/havoc_santoni
+ro.havoc.maintainer=Gabriel Nogueira
+ro.havoc.maintainer.username=XDDEATH69
+TARGET_INCLUDE_LIVE_WALLPAPERS := false 
+TARGET_INCLUDE_LIVE_WALLPAPERS=false
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 720
 
